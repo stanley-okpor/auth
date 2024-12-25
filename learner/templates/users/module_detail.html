@@ -1,0 +1,24 @@
+{%extends 'users/layout.html' %}
+{% block body %}
+
+
+<h1>{{ module.title }}</h1>
+<p>{{ module.description }}</p>
+<div>
+    <button id="complete-btn">Mark as Complete</button>
+</div>
+
+<script>
+    document.getElementById('complete-btn').addEventListener('click', function() {
+        fetch(`/complete-module/{{ module.id }}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        }).then(response => response.json())
+          .then(data => alert(data.message));
+    });
+</script>
+
+
+{%endblock%}

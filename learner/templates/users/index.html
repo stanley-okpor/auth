@@ -1,0 +1,53 @@
+{%extends "users/layout.html"%}
+{%block body%}
+<div class="container">
+    <h1>Welcome, {{ request.user.username }}</h1> 
+    <h4>Email: {{request.user.email}}</h4>
+
+
+<h2>Your Progress</h2>
+<p>{{ completed_modules }} out of {{ total_modules }} modules completed</p>
+<p>Overall Progress: {{ progress_percentage|floatformat:2 }}%</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Module</th>
+            <th>Status</th>
+            <th>Last Accessed</th>
+        </tr>
+    </thead>
+    
+
+    <tbody>
+        {% for progress in user_progress %}
+        <tr>
+            <td>{{ progress.module.title }}</td>
+            <td>{{ progress.completed|yesno:"Completed,In Progress" }}
+            </td>
+            <td>{{ progress.last_accessed|date:"Y-m-d H:i" }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% for pro in user_progress%}
+<ul>
+    <li>title:{{pro.module.title}}</li>
+    <li>{% if pro.completed %}
+        Completed
+    {% else %}
+        In Progress
+    {% endif %}
+    
+    </li>
+
+</ul>
+{% endfor%}
+
+
+
+<button><a href="{% url 'logout'%}">Log Out</a></button>
+{%endblock%}
+</div>

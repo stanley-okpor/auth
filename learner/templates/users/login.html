@@ -1,0 +1,26 @@
+{%extends 'users/layout.html'%}
+
+{% block body%}
+{% if messages %}
+
+   {{messages}}
+
+{% endif%}
+
+<div class="show">
+    <se class="container">
+        <h2 class="mt-5">Login</h2>
+        <form method="POST" class="mt-3" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Login</button>
+           <button> <a href="{% url 'welcome'%}">Go Back Home to signup!</a></button>
+
+        </form>
+
+    </div>
+   
+
+
+
+{%endblock %}

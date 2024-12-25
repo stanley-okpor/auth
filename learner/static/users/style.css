@@ -1,0 +1,88 @@
+h1,h2,h3,h4,h5,h6,button {
+    color: rgb(226, 43, 43);
+    text-align: center;
+    /*border: 3px solid black;*/
+    /*border-collapse: collapse;*/
+    padding: 2px;
+    font-size: 28px;
+    font-weight: bold;
+    border-spacing: auto;
+
+    
+
+}
+button{
+    color: black;
+    position: relative;
+}
+
+div {
+    padding: 24px;
+    background-color: yellowgreen;
+    margin: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+
+            
+}
+#show{
+    text-align: center;
+}
+ /*button{
+    width:100px;
+    height:50px;
+    font-size :24px;
+    background-color: green;
+
+    color: blueviolet;
+    text-align: center;
+    border: 3px solid black;
+    border-collapse: collapse;
+*/
+ 
+button:hover{
+    background-color: yellow; 
+}
+.container{
+    
+    text-align: center;
+
+}
+#container >div{
+    background-color : rgb(19, 97, 241);
+    font-size:10px;
+    padding:20px;
+    margin :20px;
+    text-align: center;
+
+}
+#grid{
+    background-color:green;
+    display:grid;
+    padding:20px;
+    grid-column :20px;
+    grid-row-gap:10px;
+    grid-template-columns: 200px 200px auto;
+}
+body{
+font-family: Arial, Helvetica, sans-serif;
+
+}
+.text{
+    text-align:center;
+    font-family:sans-serif;
+
+    font-size:20px;
+    padding:6px;
+    margin :6px;
+    
+
+}
+button{
+    border: 3px solid black;
+    border-collapse: collapse;
+    
+    
+    
+}

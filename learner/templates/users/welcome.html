@@ -1,0 +1,47 @@
+{%extends 'users/layout.html'%}
+{%block body%}
+<style>
+    div{
+        display: none;
+        
+    }
+    </style>
+<h4>Welcome</h4>
+
+<nav id="show">
+  
+ 
+<button data-page="login">Login</button>
+<p class='text'>
+
+    {% if messages %}
+
+    {{messages}}
+    {%else%}
+   Please Login. If you do not have an account with us, click on the Register to sign up
+
+
+ {% endif%}
+
+</p>
+<button data-page="signup"> Register</button>
+
+
+</nav>
+
+
+<div id="login">
+    <a href="{% url 'login'%}">Click to login</a>
+    <P>OR</P>
+    <a href="{%url 'welcome'%}">Click to Go back</a>
+
+</div>
+<div id="signup">
+<a href="{%url 'signup'%}">Click to signup</a>
+<P>OR</P>
+
+<a href="{% url 'welcome'%}">Click to go Back!</a>
+
+
+
+{%endblock%}

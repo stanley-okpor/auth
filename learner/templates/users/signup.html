@@ -1,0 +1,27 @@
+{%extends 'users/layout.html'%}
+<style>
+    div{
+        background-color: red;
+        background: fixed;
+    }
+</style>
+
+{%block body %}
+
+<h2 class="mt-5">Sign Up</h2>
+
+    <div class="container">
+        <form method="POST" class="mt-3" action="{%url 'signup'%}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <button class="a btn-success"> <a href="{% url 'welcome'%}">Go Back Home to login!</a></button>
+        </button>
+        </form>
+        
+    </div>
+
+
+
+
+{%endblock%}
