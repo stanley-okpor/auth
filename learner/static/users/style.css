@@ -11,6 +11,12 @@ h1,h2,h3,h4,h5,h6,button {
     
 
 }
+#richman{
+    font-size: large;
+    text-align: center;
+    text-decoration: dashed;
+    color: chartreuse;
+}
 button{
     color: black;
     position: relative;
@@ -65,8 +71,9 @@ button:hover{
     grid-row-gap:10px;
     grid-template-columns: 200px 200px auto;
 }
-body{
+body, a{
 font-family: Arial, Helvetica, sans-serif;
+
 
 }
 .text{

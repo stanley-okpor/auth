@@ -1,0 +1,30 @@
+
+{% extends "courses/base.html" %}
+
+{% block content %}
+<h1>{{ course.title }}</h1>
+<p>{{ course.description }}</p>
+<p>Duration: {{ course.duration }} minutes</p>
+
+{% if user.is_authenticated %}
+  {% if enrolled %}
+    <p>You are enrolled in this course.</p>
+  {% else %}
+    <form action="{% url 'enroll' course.id %}" method="post">
+      {% csrf_token %}
+      <button type="submit">Enroll</button>
+    </form>
+  {% endif %}
+{% endif %}
+
+<h2>Lessons</h2>
+<ul>
+  {% for lesson in course.lessons.all %}
+    <li>{{ lesson.title }}</li>
+  {% endfor %}
+</ul>
+
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
+{% endblock %}

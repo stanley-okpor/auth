@@ -1,0 +1,16 @@
+
+{% extends "courses/base.html" %}
+<div class="container">
+{% block content %}
+<h1>Your Progress</h1>
+<ul>
+  {% for progress in progress_data %}
+    <li>
+      <strong>{{ progress.course.title }}</strong>: {{ progress.progress }}% complete
+      ({{ progress.completed_lessons }} of {{ progress.total_lessons }} lessons)
+    </li>
+  {% endfor %}
+</ul>
+<button><a href="http://">Go Back Home</a></button>
+</div>
+{% endblock %}

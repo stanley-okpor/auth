@@ -11,12 +11,13 @@ urlpatterns = [
     path("index/", views.index, name="index"),
     path("welcome/",views.welcome, name="welcome"),
     path("logout",views.logout_view, name="logout"),
-   # path('accounts/', include('allauth.urls')),  # Allauth URLs
+   
     path('module/<int:module_id>/', views.view_module, name='view_module'),
     path('complete-module/<int:module_id>/', views.complete_module, name='complete_module'),
     path('dashboard/', views.student_dashboard, name='student_dashboard'),
 
-
-
-
+    path('', views.CourseListView.as_view(), name='course-list'),
+    path('course/<int:pk>/', views.CourseDetailView.as_view(), name='course-detail'),
+    path('enroll/<int:course_id>/', views.enroll, name='enroll'),
+    path('progress/', views.progress, name='progress'),
 ]
